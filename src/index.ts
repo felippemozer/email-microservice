@@ -1,8 +1,11 @@
 import express from "express";
+import routes from "./routes";
 
 export const app = express();
 
-const port = process.env.PORT || 4000;
-app.listen(port, () => {
-    console.info(`Server running on port ${port}`);
+app.use(express.json());
+app.use("/", routes);
+
+app.listen(4000, () => {
+    console.info(`Server running on port 4000`);
 })
