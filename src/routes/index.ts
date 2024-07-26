@@ -9,7 +9,7 @@ const sendEmailController = new SendEmailController();
 router.post(
     "/send-email",
     validateSchema(EmailSchema.send),
-    sendEmailController.handle
+    sendEmailController.handle.bind(sendEmailController)
 );
 
 export default router;
