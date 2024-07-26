@@ -1,0 +1,1 @@
+export * as EmailSchema from "./email.schema";
