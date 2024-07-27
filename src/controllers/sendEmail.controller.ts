@@ -11,7 +11,7 @@ export class SendEmailController {
     private emailService: IEmailService;
 
     constructor() {
-        this.emailService = new EmailService("smtp.example.com");
+        this.emailService = new EmailService();
     }
     async handle(
         req: Request<unknown, unknown, RequestBody>,
@@ -29,7 +29,6 @@ export class SendEmailController {
                 subject,
                 to
             });
-            console.info("Rota executou com sucesso");
             res.status(204).end();
         } catch (error) {
             next(error);
