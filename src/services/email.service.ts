@@ -1,35 +1,34 @@
-import { createTransport, Transporter } from "nodemailer";
+import { Address, MailtrapClient } from "mailtrap";
 import { IEmailService, ISendEmailInputDTO } from "./email.service.interface";
 
 export class EmailService implements IEmailService {
-    private client: Transporter;
+    private client;
 
-    constructor(host: string) {
-        this.client = createTransport({
-            host,
-            auth: {
-                user: "username",
-                pass: "password"
-            }
+    constructor() {
+        this.client = new MailtrapClient({
+            token: process.env.MAILTRAP_API_TOKEN ?? "",
+            testInboxId: Number(process.env.MAILTRAP_TESTING_INBOX_ID),
+            accountId: Number(process.env.MAILTRAP_ACCOUNT_ID)
         });
     }
 
     async send(dto: ISendEmailInputDTO): Promise<void> {
-        console.info("Funcao de envio chamada com sucesso");
-        const {
-            body,
-            subject,
-            to
-        } = dto;
-        console.info(`to: ${to}`);
-        console.info(`subject: ${subject}`);
-        console.info(`body: ${body}`);
-        const response = await this.client.sendMail({
-            from: "email@email.com",
+        const subject = dto.subject;
+        const text = dto.body;
+        const from: Address = {
+            name: "Teste",
+            email: "teste@teste.com"
+        };
+        const to: Array<Address> = [{
+            email: dto.to
+        }];
+
+        const response = await this.client.send({
+            from,
             to,
             subject,
-            text: body
+            text
         });
-        console.log(response)
+        console.info(response);
     }
 }
