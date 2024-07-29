@@ -1,0 +1,54 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Email API",
+    "description": "Email microservice to send email information through Mailtrap"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000",
+      "description": "Localhost"
+    }
+  ],
+  "paths": {
+    "/send-email": {
+      "post": {
+        "summary": "Sends an email to a single receiver",
+        "description": "Sends a basic email, composed by subject and a text body, to only one email",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "to": {
+                    "type": "string",
+                    "description": "Receiver email",
+                    "example": "example@example.com"
+                  },
+                  "subject": {
+                    "type": "string",
+                    "description": "Email subject",
+                    "example": "Test subject"
+                  },
+                  "body": {
+                    "type": "string",
+                    "description": "Email content as text",
+                    "example": "This is an email test body as example"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    }
+  }
+}
