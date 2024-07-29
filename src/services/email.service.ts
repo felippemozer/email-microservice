@@ -17,18 +17,17 @@ export class EmailService implements IEmailService {
         const text = dto.body;
         const from: Address = {
             name: "Teste",
-            email: "teste@teste.com"
+            email: "teste@demomailtrap.com"
         };
         const to: Array<Address> = [{
             email: dto.to
         }];
 
-        const response = await this.client.send({
+        await this.client.send({
             from,
             to,
             subject,
             text
         });
-        console.info(response);
     }
 }
