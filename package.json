@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "lint": "yarn eslint src/**/*.ts",
     "local": "tsc-watch --onSuccess \"node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/index.js\"",
     "test": "jest"
   },
@@ -21,7 +22,6 @@
     "express": "^4.19.2",
     "joi": "^17.13.3",
     "mailtrap": "^3.4.0",
-    "swagger-ui-express": "^5.0.1",
-    "tsoa": "^6.4.0"
+    "swagger-ui-express": "^5.0.1"
   }
 }
