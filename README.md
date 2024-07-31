@@ -1,5 +1,15 @@
 # Email Microservice Project
 
+## Table of contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Notes](#notes)
+- [Contact](#contact)
+
+## Description
+
 Service responsible for deal with emails. It uses [Mailtrap](https://mailtrap.io/) as email delivery platform and [Typescript](https://www.typescriptlang.org/) as programming language along with [NodeJS](https://nodejs.org/pt) as runtime environment.
 
 ## Installation
