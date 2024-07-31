@@ -1,4 +1,4 @@
-import { EmailService } from "./email.service"
+import { EmailService } from "./email.service";
 
 describe("send email", () => {
     const emailService = new EmailService();
