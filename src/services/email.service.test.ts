@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { EmailService } from "./email.service";
 
 describe("send email", () => {
@@ -5,7 +6,7 @@ describe("send email", () => {
 
     it("should send email to account owner", () => {
         expect(emailService.send({
-            to: "felippemozer22@gmail.com",
+            to: "harafih372@fuzitea.com",
             subject: "Teste de envio para dono da conta",
             body: "Enviando um email para o dono da conta do serviço"
         })).resolves.toBeUndefined()
