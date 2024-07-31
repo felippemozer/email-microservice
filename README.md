@@ -1,4 +1,4 @@
-# Email API project
+# Email Microservice Project
 
 Service responsible for deal with emails. It uses [Mailtrap](https://mailtrap.io/) as email delivery platform and [Typescript](https://www.typescriptlang.org/) as programming language along with [NodeJS](https://nodejs.org/pt) as runtime environment.
 
@@ -26,4 +26,4 @@ Due by limitations on Mailtrap demonstration domain (demomailtrap.com), it is al
 
 ## Contact
 
-Felippe Mozer - <felippemozer22@gmail.com>
+Felippe Mozer - felippemozer22@gmail.com
